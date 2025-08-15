@@ -151,13 +151,13 @@ export class WrenAIAdaptor implements IWrenAIAdaptor {
       });
 
       if (response.status === 200) {
-        logger.info(`Wren AI: Deleted semantics for project ${projectId}`);
+        logger.info(`PROA: Deleted semantics for project ${projectId}`);
       } else {
         throw new Error(`Failed to delete semantics. ${response.data?.error}`);
       }
     } catch (error: any) {
       throw new Error(
-        `Wren AI: Failed to delete semantics: ${getAIServiceError(error)}`,
+        `PROA: Failed to delete semantics: ${getAIServiceError(error)}`,
       );
     }
   }
@@ -242,7 +242,7 @@ export class WrenAIAdaptor implements IWrenAIAdaptor {
       });
       return { queryId: res.data.query_id };
     } catch (err: any) {
-      logger.debug(`Got error when asking wren AI: ${getAIServiceError(err)}`);
+      logger.debug(`Got error when asking PROA: ${getAIServiceError(err)}`);
       throw err;
     }
   }
@@ -344,25 +344,25 @@ export class WrenAIAdaptor implements IWrenAIAdaptor {
       );
       const deployId = res.data.id;
       logger.debug(
-        `Wren AI: Deploying wren AI, hash: ${hash}, deployId: ${deployId}`,
+        `PROA: Deploying PROA, hash: ${hash}, deployId: ${deployId}`,
       );
       const deploySuccess = await this.waitDeployFinished(deployId);
       if (deploySuccess) {
-        logger.debug(`Wren AI: Deploy wren AI success, hash: ${hash}`);
+        logger.debug(`PROA: Deploy PROA success, hash: ${hash}`);
         return { status: WrenAIDeployStatusEnum.SUCCESS };
       } else {
         return {
           status: WrenAIDeployStatusEnum.FAILED,
-          error: `Wren AI: Deploy wren AI failed or timeout, hash: ${hash}`,
+          error: `PROA: Deploy PROA failed or timeout, hash: ${hash}`,
         };
       }
     } catch (err: any) {
       logger.debug(
-        `Got error when deploying to wren AI, hash: ${hash}. Error: ${err.message}`,
+        `Got error when deploying to PROA, hash: ${hash}. Error: ${err.message}`,
       );
       return {
         status: WrenAIDeployStatusEnum.FAILED,
-        error: `Wren AI Error: deployment hash:${hash}, ${err.message}`,
+        error: `PROA Error: deployment hash:${hash}, ${err.message}`,
       };
     }
   }
@@ -377,14 +377,14 @@ export class WrenAIAdaptor implements IWrenAIAdaptor {
       max_categories: input.maxCategories,
       configuration: input.configuration,
     };
-    logger.info(`Wren AI: Generating recommendation questions`);
+    logger.info(`PROA: Generating recommendation questions`);
     try {
       const res = await axios.post(
         `${this.wrenAIBaseEndpoint}/v1/question-recommendations`,
         body,
       );
       logger.info(
-        `Wren AI: Generating recommendation questions, queryId: ${res.data.id}`,
+        `PROA: Generating recommendation questions, queryId: ${res.data.id}`,
       );
       return { queryId: res.data.id };
     } catch (err: any) {
