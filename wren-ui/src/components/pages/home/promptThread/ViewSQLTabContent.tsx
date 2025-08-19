@@ -15,7 +15,7 @@ import {
 import CheckOutlined from '@ant-design/icons/CheckOutlined';
 import CloseOutlined from '@ant-design/icons/CloseOutlined';
 import CodeFilled from '@ant-design/icons/CodeFilled';
-import { BinocularsIcon } from '@/utils/icons';
+import { BinocularsIcon, ShareIcon } from '@/utils/icons';
 import { nextTick } from '@/utils/time';
 import useNativeSQL from '@/hooks/useNativeSQL';
 import { DATA_SOURCE_OPTIONS } from '@/components/pages/setup/utils';
@@ -210,6 +210,21 @@ export default function ViewSQLTabContent(props: AnswerResultProps) {
         >
           View results
         </Button>
+
+        <Button
+              size="small"
+              className="ml-2"
+              icon={<ShareIcon style={{
+                paddingBottom: 2,
+                marginRight: 8,
+              }} />}
+              onClick={() => {}}
+              data-ph-capture="true"
+              data-ph-capture-attribute-name="cta_text-answer_export_data"
+            >
+              Export data
+            </Button>
+
         {previewDataResult?.data?.previewData && (
           <div className="mt-2 mb-3">
             <PreviewData

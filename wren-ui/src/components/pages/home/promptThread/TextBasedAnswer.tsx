@@ -5,7 +5,7 @@ import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
 import CaretDownOutlined from '@ant-design/icons/CaretDownOutlined';
 import EditOutlined from '@ant-design/icons/EditOutlined';
 import styled from 'styled-components';
-import { BinocularsIcon } from '@/utils/icons';
+import { BinocularsIcon, ShareIcon } from '@/utils/icons';
 import { nextTick } from '@/utils/time';
 import { MORE_ACTION } from '@/utils/enum';
 import usePromptThreadStore from './store';
@@ -240,6 +240,20 @@ export default function TextBasedAnswer(props: AnswerResultProps) {
               data-ph-capture-attribute-name="cta_text-answer_preview_data"
             >
               View results
+            </Button>
+
+            <Button
+              size="small"
+              className="ml-2"
+              icon={<ShareIcon style={{
+                paddingBottom: 2,
+                marginRight: 8,
+              }} />}
+              onClick={() => {}}
+              data-ph-capture="true"
+              data-ph-capture-attribute-name="cta_text-answer_export_data"
+            >
+              Export data
             </Button>
 
             {previewDataResult?.data?.previewData && (
