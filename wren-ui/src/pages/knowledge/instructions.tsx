@@ -181,7 +181,7 @@ export default function ManageInstructions() {
         }
         description={
           <>
-            {`On this page, you can manage saved instructions that guide PROA in
+            {`On this page, you can manage saved instructions that guide PROA BI in
             generating SQL queries. These instructions help PROA understand your
             data model and business rules, improving query accuracy and
             reducing the need for manual refinements.`}
