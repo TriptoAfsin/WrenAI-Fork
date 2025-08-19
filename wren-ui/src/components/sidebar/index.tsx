@@ -1,15 +1,15 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Button } from 'antd';
 import styled from 'styled-components';
 import { Path } from '@/utils/enum';
-import { DiscordIcon, GithubIcon } from '@/utils/icons';
+// import { DiscordIcon, GithubIcon } from '@/utils/icons';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';
 import Home, { Props as HomeSidebarProps } from './Home';
 import Modeling, { Props as ModelingSidebarProps } from './Modeling';
 import Knowledge from './Knowledge';
 import APIManagement from './APIManagement';
-import LearningSection from '@/components/learning';
+// import LearningSection from '@/components/learning';
 
 const Layout = styled.div`
   position: relative;

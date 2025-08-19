@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { Button, Layout, Space } from 'antd';
 import styled from 'styled-components';
-import LogoBar from '@/components/LogoBar';
+// import LogoBar from '@/components/LogoBar';
 import { Path } from '@/utils/enum';
 import Deploy from '@/components/deploy/Deploy';
 
