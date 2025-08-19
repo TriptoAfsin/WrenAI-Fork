@@ -142,8 +142,8 @@ export default function AdjustSQLModal(props: Props) {
               type="secondary"
               className="text-sm gray-7 text-left"
             >
-              The SQL statement used here follows <b>PROA SQL</b>, which is
-              based on ANSI SQL and optimized for PROA.{` `}
+              The SQL statement used here follows <b>PROA BI SQL</b>, which is
+              based on ANSI SQL and optimized for PROA BI.{` `}
               <Typography.Link
                 type="secondary"
                 href="https://docs.getwren.ai/oss/guide/home/wren_sql"

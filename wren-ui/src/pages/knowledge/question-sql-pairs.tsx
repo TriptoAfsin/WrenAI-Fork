@@ -145,7 +145,7 @@ export default function ManageQuestionSQLPairs() {
         description={
           <>
             {`On this page, you can manage your saved question-SQL pairs. These
-            pairs help PROA learn how your organization writes SQL, allowing
+            pairs help PROA BI learn how your organization writes SQL, allowing
             it to generate queries that better align with your expectations.`}
             <Link
               className="gray-8 underline"

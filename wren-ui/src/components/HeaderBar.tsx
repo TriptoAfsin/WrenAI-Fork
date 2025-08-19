@@ -31,6 +31,20 @@ const StyledHeader = styled(Header)`
   padding: 10px 16px;
 `;
 
+const Brand = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: var(--gray-1);
+
+  .accent {
+    margin-left: 6px;
+    color: var(--gray-1);
+  }
+`;
+
 export default function HeaderBar() {
   const router = useRouter();
   const { pathname } = router;
@@ -44,7 +58,10 @@ export default function HeaderBar() {
         style={{ marginTop: -2 }}
       >
         <Space size={[48, 0]}>
-          <LogoBar />
+          {/* <LogoBar /> */}
+          <Brand>
+            PROA <span className="accent">BI</span>
+          </Brand>
           {showNav && (
             <Space size={[16, 0]}>
               <StyledButton
